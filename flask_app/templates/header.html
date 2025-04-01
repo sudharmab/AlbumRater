@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block header %}
+<nav class="navbar flex w-full justify-between z-40">
+    <a class="m-5 navlink" href="{{ url_for('movies.index') }}">
+        <span class="hidden sm:block">Home</span>
+        <span class="block sm:hidden">Home</span>
+    </a>
+    {% if current_user.is_authenticated %}
+    <div class="flex">
+        <a class="my-5 mr-5 ml-0 navlink text-white" href="{{ url_for('users.account') }}">Account</a>
+        <a class="my-5 mr-5 ml-0 navlink text-white"
+        style="background-color: #DB5C68; color: white; text-decoration: none;"
+        onmouseover="this.style.backgroundColor='#C14E5A'; this.style.color='white';"
+        onmouseout="this.style.backgroundColor='#DB5C68'; this.style.color='white';"
+        href="{{ url_for('users.logout') }}">Logout</a>
+
+         </div>
+    {% else %}
+    <div class="flex">
+        <a class="my-5 mr-5 ml-0 navlink" href="{{ url_for('users.login') }}">Login</a>
+        <a class="my-5 mr-5 ml-0 navlink" href="{{ url_for('users.register') }}">Register</a>
+    </div>
+    {% endif %}
+</nav>
+{% block content %}{% endblock %}{% endblock %}
