@@ -1,1 +1,1 @@
-# CMSC388J_Final
+A website to rate albums
