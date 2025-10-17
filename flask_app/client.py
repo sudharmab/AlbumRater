@@ -1,5 +1,6 @@
 import requests
 import time
+from flask_app.config import CLIENT_ID, CLIENT_SECRET
 
 
 class Album(object):
@@ -31,8 +32,8 @@ class SpotifyClient(object):
         self.auth_url = "https://accounts.spotify.com/api/token"
         self.auth_data = {
             "grant_type": "client_credentials",
-            "client_id": "d2e304cbc8904703bc9ced052fdb6fc9",
-            "client_secret": "0d4e8bcd7da44d7b80362db9007184ed",
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET,
         }
 
         try:
